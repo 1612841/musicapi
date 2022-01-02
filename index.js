@@ -54,5 +54,5 @@ app.get(`/song`, (req, res) => {
     res.status(200).json(songData);
 });
 app.listen(process.env.PORT || port, () => {
-    console.log(`Server listening on port ${PORT}`);
+    console.log(`Server listening on port ${process.env.PORT || port}`);
 })
