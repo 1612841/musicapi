@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const fs = require("fs");
 const cors = require("cors");
-const PORT = 6000;
+const port = 6000;
 
 const __AUDIO_TYPE__ = {
     ukpop: "ukpop",
@@ -53,6 +53,6 @@ app.get(`/song`, (req, res) => {
     }
     res.status(200).json(songData);
 });
-app.listen(PORT, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`Server listening on port ${PORT}`);
 })
